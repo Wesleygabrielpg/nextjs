@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- add-employee24:07-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <title>Clínica - Médica & Hospital - Adicionar Funcionários</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <%- include('./hospital/header.html'); %>
+
+      <div class="page-wrapper">
+
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-12">
+              <h4 class="page-title">Adicionar Preceptor</h4>
+            </div>
+          </div>
+          <div class="alert alert-success" id="success_alert" role="alert"></div>
+          <div class="alert alert-danger" id="error_alert" role="alert"></div>
+
+          <!-- EMAIL -->
+          <form action="/func/add" method='POST' id="addFunc" class="addFunc">
+            <div class="card-box">
+              <h3 class="card-title">Informações do Preceptor</h3>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="profile-basic">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="nome_func">Nome</label>
+                        <div class="form-group">
+                          <input class="form-control floating" id='nome_func' name="nome_func" type="text" required>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="email">Email</label>
+                        <div class="form-group">
+                          <input class="form-control floating" id='email' name="email" type="email" required>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="password">Senha</label>
+                        <div class="form-group">
+                          <input class="form-control floating" id='password' name="password" type="password"
+                            placeholder="Ex: 123AbC@!" required>
+                          <span class="badge" id='StrengthDisp' name='StrengthDisp'></span>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="confirm_password">Confirmar Senha</label>
+                        <div class="form-group">
+                          <input class="form-control floating" id='confirm_password' name="confirm_password"
+                            type="password" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center m-t-20">
+                <button class="btn btn-primary submit-btn" id='submit_bttn' type="submit">
+                  <i class="fa fa-plus"></i>
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+
+  <div class="sidebar-overlay" data-reff=""></div>
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/jquery.slimscroll.js"></script>
+  <script src="/assets/js/alert_cadastro.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+</body>
+
+
+<!-- add-employee24:07-->
+
+</html>

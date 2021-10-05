@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <title>Clínica - Médica & Hospital - Perfil</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrapper">
+
+    <%- include('./hospital/funcionarioProfile/header.html'); %>
+
+      <div class="page-wrapper">
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-7 col-6">
+              <h4 class="page-title">Informações do User</h4>
+            </div>
+          </div>
+
+          <div class="card-box profile-header">
+            <div class="profile-view">
+              <!-- INFO HOSPITAL -->
+              <div class="profile-basic">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="profile-info-left" id='aluno'>
+                      <h3 class="user-name m-t-0 mb-0">
+                        <%= funcInfo.nome_func %>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <ul class="personal-info">
+                      <li>
+                        <span class="title">Email:</span>
+                        <span class="text" id='user'>
+                          <a href="#">
+                            <%= userInfo.email %>
+                          </a>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <hr>
+
+              <!-- FUNCIONÁRIOS -->
+              <div class="profile-basic" id='funcionarios'>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="profile-info-left">
+                      Informações sobre o Hospital
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <ul class="personal-info">
+                      <li>
+                        <span class="title">Nome:</span><br>
+                        <span class="text"><a href="#">
+                            <%= hospInfo.nome_hospital %>
+                          </a></span>
+                      </li>
+                      <li>
+                        <span class="title">Email:</span><br>
+                        <span class="text"><a href="#">
+                            <%= hospInfo.User_Hosp.email %>
+                          </a></span>
+                      </li>
+                      <li>
+                        <span class="title">Endereço:</span><br>
+                        <span class="text">
+                          <a href="#">
+                            <%= hospInfo.endereco %>
+                          </a>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="title">Bairro:</span><br>
+                        <span class="text">
+                          <a href="#">
+                            <%= hospInfo.bairro %>
+                          </a>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="title">Número:</span><br>
+                        <span class="text">
+                          <a href="#">
+                            <%= hospInfo.numero %>
+                          </a>
+                        </span>
+                      </li>
+
+                      <hr>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="sidebar-overlay" data-reff=""></div>
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/jquery.slimscroll.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+</body>
+
+</html>

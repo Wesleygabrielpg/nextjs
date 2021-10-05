@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <title>Clínica - Médica & Hospital - Perfil</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrapper">
+
+    <%- include('./hospital/header.html'); %>
+
+      <div class="page-wrapper">
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-7 col-6">
+              <h4 class="page-title">Informações do Hospital</h4>
+            </div>
+
+            <div class="col-sm-5 col-6 text-right m-b-30">
+              <a href="editProfileHo" class="btn btn-primary btn-rounded">
+                <i class="fa fa-plus"></i> Editar informações</a>
+            </div>
+          </div>
+
+          <div class="card-box profile-header">
+            <div class="profile-view">
+              <!-- INFO HOSPITAL -->
+              <div class="profile-basic" id='hospital'>
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="profile-info-left">
+                      <h3 class="user-name m-t-0 mb-0">
+                        <%= hospInfo.nome_hospital %>
+                      </h3>
+                      <small class="text-muted">Centro de .....</small>
+                      <div class="staff-id">código do hospital: 0001</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-7">
+                    <ul class="personal-info">
+                      <li>
+                        <span class="title">Email:</span>
+                        <span class="text"><a href="#">
+                            <%= hospUser.email %>
+                          </a></span>
+                      </li>
+                      <li>
+                        <span class="title">Endereço:</span>
+                        <span class="text"><a href="#">
+                            <%= hospInfo.endereco %>
+                          </a></span>
+                      </li>
+                      <li>
+                        <span class="title">Bairro:</span>
+                        <span class="text"><a href="#">
+                            <%= hospInfo.bairro %>
+                          </a></span>
+                      </li>
+                      <li>
+                        <span class="title">Número:</span><br>
+                        <span class="text"><a href="#">
+                            <%= hospInfo.numero %>
+                          </a></span>
+                      </li>
+                      <li>
+                        <span class="title">Telefone:</span><br>
+                        <span class="text"><a href="#">
+                            <%= hospInfo.telefone %>
+                          </a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <hr>
+              
+              <!-- FUNCIONÁRIOS -->
+              <div class="profile-basic" id='funcionarios'>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="profile-info-left">
+                      Informações sobre os Funcionários
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <ul class="personal-info">
+                      <% if(hospFuncs != '' ) { %>
+                        <% hospFuncs.forEach(function(funcionarios) { %>
+                          <li>
+                            <span class="title">Nome:</span><br>
+                            <span class="text"><a href="#">
+                              <%= funcionarios.nome_func %>
+                              </a></span>
+
+                              <li>
+                                <span class="title">email:</span><br>
+                                <span class="text">
+                                  <a href="#">
+                                    <%= funcionarios.User_FuncHosp.email %>
+                                  </a>
+                                </span>
+                              </li>
+                          </li>
+                          <hr>
+                        <% }); %>
+                      <% }; %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="sidebar-overlay" data-reff=""></div>
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/jquery.slimscroll.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+</body>
+
+</html>

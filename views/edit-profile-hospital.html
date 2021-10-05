@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- edit-profile23:03-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <title>Clínica - Médica & Hospital - Alterar Informações</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <%- include('./hospital/header.html') %>
+
+      <div class="page-wrapper">
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-12">
+              <h4 class="page-title">Atualizar Informações da Conta</h4>
+            </div>
+          </div>
+          <div class="alert alert-success" id="success_alert" role="alert"></div>
+          <div class="alert alert-danger" id="error_alert" role="alert"></div>
+
+          <!-- INFO HOSPITAL -->
+          <form action="/editProfileHo/sub" id='formsHosp' method='POST'>
+            <div class="card-box">
+              <h3 class="card-title">Atualizar Informações do Hospital</h3>
+              <div class="col-md-12">
+                <div class="alert alert-danger" id="error_alert1" role="alert"></div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Endereço</label>
+                      <input type="text" id="endereco" name="endereco" class="form-control floating">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Bairro</label>
+                      <input type="text" id="bairro" name="bairro" class="form-control floating">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Número</label>
+                      <input type="number" id="numero" name="numero" class="form-control floating" max="999999">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Telefone</label>
+                      <input type="text" id="telefone" name="telefone" class="form-control floating" maxlength="11">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center m-t-20">
+                <button class="btn btn-primary submit-btn" id='submit_bttn1' type="submit">Salvar Alterações</button>
+              </div>
+            </div>
+
+
+          </form>
+
+          <!-- EMAIL -->
+          <form action="/editProfileHo/sub" method='POST'>
+            <div class="card-box">
+              <div class="col-md-12">
+                <div class="alert alert-danger" id="error_alert2" role="alert"></div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Digite seu novo email</label>
+                      <input type="email" id="email" name='email' class="form-control floating" required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Confirme seu novo email</label>
+                      <input type="email" id="confirm_email" name='confirm_email' class="form-control floating"
+                        required>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="text-center m-t-20">
+                <button class="btn btn-primary submit-btn" id='submit_bttn2' type="submit">Salvar email</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- SENHA -->
+          <form action="/editProfileHo/sub" method="POST">
+            <div class="card-box">
+              <div class="col-md-12">
+                <div class="alert alert-danger" id="error_alert3" role="alert"></div>
+
+                <div class="row">
+                  <span class="form-text text-muted">Sua senha deve ter no mínimo 8 caracteres, conter letras, números e
+                    caracteres especiais, e não deve conter espaços ou emoji</span>
+
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Digite sua senha atual</label>
+                      <input type="password" id="password_atual" name="password_atual" class="form-control floating"
+                        required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Digite sua nova senha</label>
+                      <input type="password" id='password' name="password" class="form-control floating" required>
+                      <span class="badge" id='StrengthDisp' name='StrengthDisp'></span>
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-6"></div>
+
+                  <div class="col-md-6">
+                    <div class="form-group form-focus">
+                      <label class="focus-label">Confirme sua nova senha</label>
+                      <input type="password" id='confirm_password' name="confirm_password" class="form-control floating"
+                        required>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="text-center m-t-20">
+                <button class="btn btn-primary submit-btn" id='submit_bttn3' type="submit">Salvar senha</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+
+  <div class="sidebar-overlay" data-reff=""></div>
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/jquery.slimscroll.js"></script>
+  <script src="/assets/js/alert_updateInfo.js"></script>
+  <script src="/assets/js/format_telefone.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+
+
+<!-- edit-profile23:05-->
+
+</html>

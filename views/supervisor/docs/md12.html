@@ -1,0 +1,95 @@
+<form action="/docs/val" id='formMD12' method="post">
+  <div class="content">
+    <div class="text-center m-t-20">
+      <button class="btn btn-primary submit-btn" id="submit">Validar Documentos</button>
+    </div>
+    <div class="table-responsive">
+      <table id='docsTab' class="table" style="width:100%; text-align: center;">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" name="select-all4" id="select-all4">
+            </th>
+            <th scope="col">
+              MATRICULA
+            </th>
+            <th scope="col">
+              ALUNO
+            </th>
+            <th scope="col">
+              TIPO
+            </th>
+            <th scope="col">
+              STATUS
+            </th>
+            <th scope="col">
+              DOC
+            </th>
+            <th scope="col">
+              OPÇÕES
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(file != '' ) { %>
+            <% file.forEach(function (file) { %>
+              <% if(file.created_by.turma == 'md12') { %>
+                <tr>
+                  <td id="selectedRowID">
+                    <input type="checkbox" name="selectedRow" id="selectedRow" value="<%= file.id %>">
+                  </td>
+  
+                  <td scope="row" id="matricula">
+                    <%= file.created_by.matricula %>
+                  </td>
+                  <td scope="row" id="nome_completo">
+                    <%= file.created_by.nome_completo %>
+                  </td>
+  
+                  <td scope="row" id="doc">
+                    <%= file.nome_doc %>
+                  </td>
+  
+                  <% if(file.validado == false ) { %>
+                  <td scope="row" id="notValidado">
+                    <span class="custom-badge status-red">
+                      PENDENTE VALIDAÇÃO
+                    </span>
+                  </td>
+  
+                  <td scope="row" style="width: 100%;">
+                    <object data="/img/<%= file.image_name %>" type="application/pdf" height="600px" width="100%">
+                      <embed src="/img/<%= file.image_name %>" type="application/pdf" height="600px" width="100%" />
+                    </object>
+                  </td>
+                  <% } else { %>
+                    <td scope="row" id="Validado">
+                      <span class="custom-badge status-green">
+                        DOC OK
+                      </span>
+                    </td>
+                  <td style="width: 100%; height: 100%;" scope="row">
+                    <a href="/img/<%= file.image_name %>" target="_blank"> PDF</a>
+                  </td>
+                  <% } %>
+  
+                  <td scope="row">
+                    <select name="updStatus" id="updStatus" class="select form-control floating">
+                      <option value="">-- selecione uma opção --</option>
+                      <option value="true"> Documento Válido </option>
+                      <option value="false"> Documento inválido </option>
+                    </select>
+                  </td>
+                </tr>
+              <% } %>
+            <% }); %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="text-center m-t-20">
+      <button class="btn btn-primary submit-btn" id="submit">Validar Documentos</button>
+    </div>
+  </div>
+</form>

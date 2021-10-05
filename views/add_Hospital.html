@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- edit-profile23:03-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <title>Clínica - Médica & Hospital - Criar grupo</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="main-wrapper">
+      <%- include('./supervisor/header.html'); %>
+    </div>
+
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4 class="page-title">Adicionar Hospital</h4>
+          </div>
+        </div>
+        <div class="alert alert-danger" id="error_alert" role="alert"></div>
+        <div class="alert alert-success" id="success_alert" role="alert"></div>
+
+        <form action="/add/hosp" method='POST'>
+          <div class="card-box">
+            <h3 class="card-title">Informações do Hospital</h3>
+            <p > Para adicionar algum hospital novo, basta apenas fornecer o nome. 
+              Por favor, digite o nome com cuidado pois o nome fornecido será usado pelo hospital para completar seu cadastro e não poderá ser alterado </p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="profile-basic">
+                  <div class="row">
+
+                    <div class="col-md-8">
+                      <label for="matricula">Digite o nome do Hospital</label>
+                      <div class="form-group checkbox">
+                        <input type="text" id="hospNome" name="hospNome" class="form-control" required>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center m-t-20">
+              <button class="btn btn-primary submit-btn" type="submit">Adicionar hospital</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sidebar-overlay" data-reff=""></div>
+
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/popper.min.js" ></script>
+  <script src="/assets/js/bootstrap.min.js" ></script>
+  <script src="/assets/js/jquery.slimscroll.js" ></script>
+  <script src="/assets/js/select2.min.js" ></script>
+  <script src="/assets/js/alert_addHospital.js" ></script>
+  <script src="/assets/js/app.js" ></script>
+</body>
+
+</html>

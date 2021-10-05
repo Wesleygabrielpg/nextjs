@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- edit-profile23:03-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <title>Clínica - Médica & Hospital - Alterar Informações</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <%- include('./aluno/profile/header.html'); %>
+
+      <div class="page-wrapper">
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-12">
+              <h4 class="page-title">Atualizar Informações de Cadastro</h4>
+            </div>
+          </div>
+          <div class="alert alert-success" id="success_alert" role="alert"></div>
+
+          <!-- EMAIL -->
+          <form action="/editProfileAl/sub" method='POST'>
+            <div class="card-box">
+              <div class="row">
+                <div class="profile-basic">
+                  <div class="row">
+
+                    <div class="alert alert-danger" id="error_alert2" role="alert"></div>
+
+                    <div class="col-md-12">
+                      <div class="form-group form-focus">
+                        <label class="focus-label">Digite seu novo email</label>
+                        <input type="email" id='email' name='email' class="form-control floating" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group form-focus">
+                        <label class="focus-label">Confirme seu novo email</label>
+                        <input type="email" id='confirm_email' name='confirm_email' class="form-control floating"
+                          required>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="text-center m-t-20">
+                <button class="btn btn-primary submit-btn" id='submit_bttn2' type="submit">Salvar email</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- SENHA -->
+          <form action="/editProfileAl/sub" method="POST">
+            <div class="card-box">
+              <div class="row">
+                <div class="profile-basic">
+                  <div class="alert alert-danger" id="error_alert3" role="alert"></div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group form-focus">
+                        <label class="focus-label">Digite sua senha atual</label>
+                        <input type="password" name="password_atual" class="form-control floating" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group form-focus">
+                        <label class="focus-label">Digite sua senha nova</label>
+                        <input type="password" id='password' name="password" class="form-control floating" required>
+                        <span class="badge" id='StrengthDisp' name='StrengthDisp'></span>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group form-focus">
+                        <label class="focus-label">Confirme sua senha nova</label>
+                        <input type="password" id='confirm_password' name="confirm_password"
+                          class="form-control floating" required>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center m-t-20">
+                <button class="btn btn-primary submit-btn" id='submit_bttn3' type="submit">Salvar senha</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+  </div>
+
+  <div class="sidebar-overlay" data-reff=""></div>
+
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/jquery.slimscroll.js"></script>
+  <script src="/assets/js/select2.min.js"></script>
+  <script src="/assets/js/alert_updateInfo.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<div class="content">
+  <div class="row" id='textVerRodizio'>
+    <div class="col-sm-12">
+      <h4 class="page-title">Grupos da MD9</h4>
+    </div>
+  </div>
+
+  <div id="Turmas">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#A" role="tab" aria-controls="home"
+          aria-selected="true">A</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#B" role="tab" aria-controls="profile"
+          aria-selected="false">B</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#C" role="tab" aria-controls="contact"
+          aria-selected="false">C</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#D" role="tab" aria-controls="contact"
+          aria-selected="false">D</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#E" role="tab" aria-controls="contact"
+          aria-selected="false">E</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!-- A -->
+      <div class="tab-pane fade show active" id="A" role="tabpanel" aria-labelledby="home-tab">
+        <%- include('./md9/grupoA.html') %>        
+      </div>
+
+      <!-- B -->
+      <div class="tab-pane fade" id="B" role="tabpanel" aria-labelledby="profile-tab">
+        <%- include('./md9/grupoB.html') %>
+      </div>
+      
+      <!-- C -->
+      <div class="tab-pane fade" id="C" role="tabpanel" aria-labelledby="contact-tab">
+        <%- include('./md9/grupoC.html') %>
+      </div>
+
+      <!-- D -->
+      <div class="tab-pane fade" id="D" role="tabpanel" aria-labelledby="contact-tab">
+        <%- include('./md9/grupoD.html') %>
+      </div>
+
+      <!-- E -->
+      <div class="tab-pane fade" id="E" role="tabpanel" aria-labelledby="contact-tab">
+        <%- include('./md9/grupoE.html') %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

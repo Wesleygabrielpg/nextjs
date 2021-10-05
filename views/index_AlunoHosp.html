@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon.ico" >
+  <title>Clínica - Médica & Hospital - Perfil Aluno</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css" >
+  <link rel="stylesheet" href="/assets/css/style.css" >
+  <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <% if(tipo_user === 'adminHosp') { %>
+      <%- include('./hospital/alunoProfile/header.html'); %>
+    <% } %>
+
+    <% if(tipo_user === 'funcHosp') { %>
+      <%- include('./hospital/funcionarioProfile/header.html'); %>
+    <% } %>
+
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="row">
+          <div class="col-sm-7 col-6">
+            <h4 class="page-title">Informações do Aluno</h4>
+          </div>
+
+        </div>
+        <div class="card-box profile-header">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="profile-view">
+                <!-- 
+                  <div class="profile-img-wrap">
+                    <div class="profile-img">
+                      <a href="#"><img class="avatar" src="/img/doctor-03.jpg" alt=""></a>
+                    </div>
+                  </div>
+                  -->
+
+                <!-- INFO ALUNO/USER -->
+                <div class="profile-basic">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="profile-info-left" id='aluno'>
+                        <h3 class="user-name m-t-0 mb-0">
+                          <%= aluno.nome_completo %>
+                        </h3>
+                        <small class="text-muted">
+                          <%= (aluno.turma).toUpperCase(); %>
+                        </small>
+                        <div class="staff-id">Matrícula : <%= aluno.matricula %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <ul class="personal-info">
+                        <li>
+                          <span class="title">CPF:</span>
+                          <span class="text">
+                            <a href="#">
+                              <%= aluno.cpf %>
+                            </a>
+                          </span>
+                        </li>
+                        <li>
+                          <span class="title">Email:</span>
+                          <span class="text" id='user'>
+                            <a href="#">
+                              <%= user.email %>
+                            </a>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOCUMENTOS  -->
+      <div class="content" id='alunoDocs'>
+        <div class="card-box profile-header">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="profile-view">
+
+                <form action="/aluno/delete/image" method="POST">
+                  <div class="col-sm-7 col-6">
+                    <h4 class="page-title"> Documentos </h4>
+                  </div>
+                  
+
+                  <!-- VALIDO -->
+                  <% alunoDocs.forEach(function (file) { %>
+                    <% if(tipo_user === 'adminHosp' && file.validado === true && (file.nome_doc == 'Assinatura do Termo de Compromisso' || file.nome_doc == 'Comprovante de Vacinação')) { %>
+                      <div id="accordion">
+                        <div class="card">
+                          <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                              <span>
+                                  <i class="fa fa-files-o"></i>
+                                  <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    Documento <%= file.nome_doc %>
+                                  </a>
+                                  <span class="custom-badge status-green">
+                                    VALIDADO
+                                  </span>
+                              </span>
+                              <span class="menu-arrow"></span>
+                            </h5>
+                          </div>
+
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                              <a href="/img/<%= file.image_name  %>" target="_blank"> PDF </a>
+                              <object class="flex-shrink-0" data="/img/<%= file.image_name  %>" type="application/pdf"
+                                width="100%" height="600px">
+                                
+                                <embed src="/img/<%= file.image_name  %>" type="application/pdf" width="100%" height="600px">
+                              </object>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% } %>
+                  <% }); %>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="sidebar-overlay" data-reff=""></div>
+
+  <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+  <script src="/assets/js/popper.min.js" ></script>
+  <script src="/assets/js/bootstrap.min.js" ></script>
+  <script src="/assets/js/jquery.slimscroll.js" ></script>
+  <script src="/assets/js/hide_query.js" ></script>
+  <script src="/assets/js/app.js" ></script>
+
+</body>
+
+</html>

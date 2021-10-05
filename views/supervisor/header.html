@@ -1,0 +1,71 @@
+<!-- PROFILE SUPERVISOR -->
+<div class="header">
+  <div class="header-left">
+    <a href="/" class="logo">
+      <img src="/assets/icon/logo.png" width="35" height="35" alt="">
+    </a>
+  </div>
+
+  <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+  <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+
+  <ul class="nav user-menu float-right">
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+        </div>
+      </div>
+    </div>
+  </ul>
+
+  <div class="sidebar">
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <li class="menu-title">Área do Supervisor</li>
+        <li class='submenu'>
+          <a href="#"><i class="fa fa-plus"></i> <span> Criar Rodízio </span> <span class="menu-arrow"></span></a>
+          <ul style="display: none;">
+            <li><a href="/user/rodizio/create/grupo"><i class="fa fa-users" aria-hidden="true"></i> Em Grupo</a></li>
+            <li><a href="/user/rodizio/create/ind"><i class="fa fa-user-o" aria-hidden="true"></i> Individual</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="/user/docs/pendentes"><i class="fa fa-files-o"></i> <span> Ver Documentos </span></a>
+        </li>
+
+        <li>
+          <a href="/user/add/hospital"><i class="fa fa-hospital-o"></i> <span>Adicionar Hospital</span></a>
+        </li>
+
+        <li>
+          <a href="/user/aluno/turma"><i class="fa fa-user-o"></i> <span>Atualizar Turma do Aluno</span></a>
+        </li>
+
+
+
+        <li class="submenu">
+          <a href="#"><i class="fa fa-user"></i> <span> Grupos </span> <span class="menu-arrow"></span></a>
+          <ul style="display: none;">
+            <li>
+              <a href="/user/grupo/create"><i class="fa fa-plus-square"></i> <span> Criar Grupo </span></a>
+            </li>
+
+            <li>
+              <a href="/user/grupo/add"><i class="fa fa-plus-circle"></i> <span> Adicionar Membros </span></a>
+            </li>
+
+            <li>
+              <a href="/user/grupo/remove"><i class="fa fa-minus-circle"></i> <span> Remover Membros </span></a>
+            </li>
+
+          </ul>
+        </li>
+        <li>
+          <a href="/user/logout"><i class="fa fa-power-off"></i> <span>Logout</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

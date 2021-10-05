@@ -1,0 +1,85 @@
+<div class="content">
+  <% let grupoNome = 'C' 
+    let grupoTurma = 'md12'  
+  %>
+  <div class="row" id='Membros_Grupo'>
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped custom-table">
+          <thead>
+            <% grupoMembro.forEach(function (membro) { %>
+              <% if(membro.nome_grupo == grupoNome && membro.turma == grupoTurma ) { %>
+              <tr class="text-center">
+                <% membro.Aluno_Grupo.forEach(function (memb) { %>
+                  <th style="min-width:100px;">Membro</th>
+                <% }) %>
+              </tr>
+              <% } %>
+            <% }) %>
+          </thead>
+          <tbody>
+            <% grupoMembro.forEach(function (membro) { %>
+              <% if(membro.nome_grupo == grupoNome && membro.turma == grupoTurma) { %>
+                <ul class="list-inline">
+                  <% membro.Aluno_Grupo.forEach(function (memb) { %>
+                    <td class="text-center">
+                    <li class="list-inline-item">
+                      <a href="/user/id/aluno/?id=<%= memb.id %>" target="_blank"> <%= memb.nome_completo %> </a>
+                    </li>
+                  </td>
+                  <% }) %>
+                </ul>
+              <% } %>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id='Rodizio'>
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped custom-table">
+          <thead>
+            <tr class="text-center">
+              <th style="min-width:100px;">Rodízio Nº</th>
+              <th>Disciplina</th>
+              <th>Data de Início</th>
+              <th>Data de Conclusão</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(rodizio !== '') { %>
+              <% rodizio.forEach(function(infoRo) { %>
+                <% infoRo.Rodizio_Grupo.forEach(function (grupo) { %>
+                  <% if(grupo.nome_grupo == grupoNome && grupo.turma == grupoTurma) { %>
+                    <tr>
+                      <td class="text-center">
+                        <%= infoRo.rodizio_numero %>
+                      </td>
+
+                      <td class="text-center">
+                        <%= infoRo.disciplina %>
+                      </td>
+
+                      <td class="text-center">
+                        <%= infoRo.data_inicio %>
+                      </td>
+
+                      <td class="text-center">
+                        <%= infoRo.data_fim %>
+                      </td>
+                    </tr>
+                  <% } %>
+                <% }); %>
+              <% }); %>
+            <% } %>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
