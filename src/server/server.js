@@ -13,7 +13,7 @@ var certificate = fs.readFileSync(cert);
 var credentials = { key: privateKey, cert: certificate };
 
 // Index/App
-const app = require('../../index');
+const app = require('../../api/index');
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
