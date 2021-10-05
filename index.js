@@ -74,7 +74,7 @@ app.use(express.static(path.join(__dirname, './public')));
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-app.set('views', './views');
+app.set('views', './public/views');
 
 app.use(Index_Router);
 
