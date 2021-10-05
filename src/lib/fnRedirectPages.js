@@ -1,5 +1,5 @@
 // Models
-const Index = require('../models/');
+const Index = require('../models');
 
 /////////// TWILIGHT ZONE
 function render500(res, error) {
