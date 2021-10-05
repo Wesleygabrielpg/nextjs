@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "./server.js",
+      "src": "./api/index.js",
       "use": "@now/node-server"
     }
   ],
@@ -11,8 +11,8 @@
       "handle": "filesystem"
     },
     {
-      "src": "/.*",
-      "dest": "server.js"
+      "src": "./src/routes/index.js",
+      "dest": "./src/server/server.js"
     }
   ]
 }
