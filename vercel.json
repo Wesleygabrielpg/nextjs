@@ -8,10 +8,7 @@
   ],
   "routes": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "./src/routes/index.js",
+      "src": "./views/",
       "dest": "./src/server/server.js"
     }
   ]
